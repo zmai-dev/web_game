@@ -159,5 +159,23 @@ body {
 }
 
 body.is-fullscreen { background: #fff; }
-.app:fullscreen { background: #fff; max-width: none; width: 100vw; min-height: 100vh; }
-.app:-webkit-full-screen { background: #fff; max-width: none; width: 100vw; min-height: 100vh; }
+.app:fullscreen {
+  background: #fff;
+  max-width: none;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.app:-webkit-full-screen {
+  background: #fff;
+  max-width: none;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
