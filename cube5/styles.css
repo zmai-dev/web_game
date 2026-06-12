@@ -13,6 +13,33 @@ body {
   padding: 2rem 1rem;
 }
 
+.howto {
+  max-width: 600px;
+  margin: 0 auto 1.2rem;
+  background: #fff;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.howto[open] {
+  padding-bottom: 1rem;
+}
+.howto summary {
+  font-weight: 600;
+  color: #555;
+  user-select: none;
+}
+.howto ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.4rem;
+  color: #555;
+}
+.howto li {
+  line-height: 1.7;
+}
+
 .title {
   font-size: 1.5rem;
   text-align: center;

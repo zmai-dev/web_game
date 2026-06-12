@@ -71,6 +71,34 @@
         margin: 0;
         line-height: 1.5;
       }
+      .instructions {
+        margin: 2.5rem auto 0;
+        max-width: 640px;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(8px);
+        border-radius: 20px;
+        padding: 1.5rem 2rem;
+        text-align: left;
+        color: #fff;
+      }
+      .instructions h2 {
+        font-size: 1.3rem;
+        margin: 0 0 0.8rem;
+        text-align: center;
+      }
+      .instructions p {
+        margin: 0 0 0.8rem;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .instructions ul {
+        margin: 0;
+        padding-left: 1.2rem;
+      }
+      .instructions li {
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
       .footer {
         margin-top: 3rem;
         color: rgba(255,255,255,0.6);
@@ -90,6 +118,18 @@
           <div class="card-desc">根据已有色块推理出剩余格子颜色，锻炼逻辑推理能力</div>
         </a>
       </div>
+
+      <section class="instructions">
+        <h2>📖 游戏说明</h2>
+        <p>五宫格游戏是一项锻炼数学能力的游戏，也是一项虚拟与现实互动的游戏。</p>
+        <ul>
+          <li>参与者需要自备大小合适的小积木，需要红色、黄色、蓝色各 2 个。</li>
+          <li>游戏中有 5 个格子，横着 3 格，竖着 3 格，组成 T 字形。</li>
+          <li>题目中将给出 2 个已知格子的颜色，参与者需要将空着的格子放上对应颜色的积木。</li>
+          <li>点击「下一个题目」可以更换题目，点击「显示答案」可以确认自己是否回答正确。</li>
+          <li>为了避免误触，游戏特别提供了全屏按钮，点击后将不容易因为误触退出游戏。</li>
+        </ul>
+      </section>
 
       <p class="footer">更多游戏正在开发中 …</p>
     </div>
