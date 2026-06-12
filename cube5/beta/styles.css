@@ -170,6 +170,9 @@ body.is-fullscreen { background: #fff; }
   justify-content: center;
   box-sizing: border-box;
 }
+.app:fullscreen .app-inner {
+  width: auto;
+}
 .app:-webkit-full-screen {
   background: #fff;
   max-width: none;
@@ -181,4 +184,7 @@ body.is-fullscreen { background: #fff; }
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+}
+.app:-webkit-full-screen .app-inner {
+  width: auto;
 }
