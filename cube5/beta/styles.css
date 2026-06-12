@@ -26,6 +26,11 @@ body {
 /* 3x3 网格，只用5格位置形成T字形 */
 .workspace {
   display: flex;
+  justify-content: center;
+}
+
+.board {
+  display: flex;
   align-items: flex-start;
   gap: 2rem;
 }
@@ -152,7 +157,7 @@ body {
 
 /* 响应式：在小屏时增加网格高度以便触控 */
 @media (max-width: 768px) {
-  .workspace { flex-direction: column; }
+  .board { flex-direction: column; align-items: center; }
   .grid { width: 100%; }
   .sidebar { width: 100%; }
 }
@@ -170,9 +175,6 @@ body.is-fullscreen { background: #fff; }
   justify-content: center;
   box-sizing: border-box;
 }
-.app:fullscreen .app-inner {
-  width: auto;
-}
 .app:-webkit-full-screen {
   background: #fff;
   max-width: none;
@@ -184,7 +186,4 @@ body.is-fullscreen { background: #fff; }
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-}
-.app:-webkit-full-screen .app-inner {
-  width: auto;
 }
