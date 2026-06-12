@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>小朋友的数学游戏</title>
+    <style>
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'PingFang SC', 'Microsoft Yahei', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #222;
+      }
+      .app {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+        text-align: center;
+      }
+      .title {
+        font-size: 2.5rem;
+        margin: 0 0 1rem;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      }
+      .subtitle {
+        font-size: 1.2rem;
+        color: rgba(255,255,255,0.85);
+        margin: 0 0 2.5rem;
+      }
+      .games {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 260px;
+        padding: 2rem 1.5rem;
+        border-radius: 24px;
+        background: #fff;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        text-decoration: none;
+        color: #222;
+        transition: transform 0.15s, box-shadow 0.15s;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+      }
+      .card:active {
+        transform: scale(0.97);
+      }
+      .card-icon {
+        font-size: 3rem;
+        margin-bottom: 0.75rem;
+      }
+      .card-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin: 0 0 0.4rem;
+      }
+      .card-desc {
+        font-size: 0.95rem;
+        color: #666;
+        margin: 0;
+        line-height: 1.5;
+      }
+      .footer {
+        margin-top: 3rem;
+        color: rgba(255,255,255,0.6);
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <h1 class="title">🎮 小朋友的数学游戏</h1>
+      <p class="subtitle">边玩边学，在游戏中爱上数学！</p>
+
+      <div class="games">
+        <a class="card" href="./cube5/">
+          <div class="card-icon">🧩</div>
+          <div class="card-title">五宫格 T 字谜题</div>
+          <div class="card-desc">根据已有色块推理出剩余格子颜色，锻炼逻辑推理能力</div>
+        </a>
+      </div>
+
+      <p class="footer">更多游戏正在开发中 …</p>
+    </div>
+  </body>
+</html>
