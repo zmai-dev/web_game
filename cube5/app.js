@@ -2,6 +2,7 @@
 
 // 常量：颜色与位置
 const COLORS = ['red', 'yellow', 'blue'];
+const COLOR_LABELS = { red: '红', yellow: '黄', blue: '蓝' };
 const TOP_ROW = ['r1c1', 'r1c2', 'r1c3'];
 const MID_COL = ['r1c2', 'r2c2', 'r3c2'];
 const ALL_POS = ['r1c1', 'r1c2', 'r1c3', 'r2c2', 'r3c2'];
@@ -111,10 +112,11 @@ function render() {
     const labelEl = el.querySelector('.label');
     if (color) {
       el.classList.add(color);
+      if (labelEl) labelEl.textContent = COLOR_LABELS[color] || '';
     } else {
       el.classList.add('hidden');
+      if (labelEl) labelEl.textContent = '?';
     }
-    if (labelEl) labelEl.textContent = '';
   }
 }
 
