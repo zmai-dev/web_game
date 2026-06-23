@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五宫格 T 字谜题 - 儿童逻辑训练游戏</title>
+    <style>
+        /* 微信公众号兼容样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft Yahei', sans-serif;
+            background: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+        
+        .game-preview {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .t-shape {
+            display: inline-block;
+            margin: 0 auto;
+        }
+        
+        .row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        
+        .cell {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+            margin: 0 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .red { background: #e74c3c; }
+        .yellow { background: #f1c40f; }
+        .blue { background: #3498db; }
+        .hidden { 
+            background: #fff; 
+            border: 2px dashed #bdc3c7;
+            color: #bdc3c7;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            padding-left: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .content {
+            font-size: 15px;
+            color: #555;
+            padding: 0 5px;
+        }
+        
+        .rules-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .rules-list li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .rules-list li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 5px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .feature-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .feature-text {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .cta-button {
+            display: block;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: linear-gradient(135deg, #2980b9, #2471a3);
+        }
+        
+        .tips {
+            background: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 20px;
+        }
+        
+        .tips-title {
+            font-weight: bold;
+            color: #f39c12;
+            margin-bottom: 8px;
+        }
+        
+        .tips-content {
+            font-size: 14px;
+            color: #7d6608;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 12px;
+        }
+        
+        .qr-code {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">五宫格 T 字谜题</h1>
+            <p class="subtitle">锻炼孩子逻辑推理能力的趣味数学游戏</p>
+        </div>
+        
+        <div class="game-preview">
+            <div class="t-shape">
+                <div class="row">
+                    <div class="cell red">红</div>
+                    <div class="cell hidden">?</div>
+                    <div class="cell blue">蓝</div>
+                </div>
+                <div class="row">
+                    <div class="cell hidden" style="visibility: hidden;"></div>
+                    <div class="cell yellow">黄</div>
+                    <div class="cell hidden" style="visibility: hidden;"></div>
+                </div>
+                <div class="row">
+                    <div class="cell hidden" style="visibility: hidden;"></div>
+                    <div class="cell hidden">?</div>
+                    <div class="cell hidden" style="visibility: hidden;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">游戏介绍</h2>
+            <div class="content">
+                <p>「五宫格 T 字谜题」是一款专为儿童设计的逻辑训练游戏。游戏使用 T 字形的五宫格（横 3 格，竖 3 格），通过已知颜色块推理出隐藏格子的颜色。</p>
+                <p style="margin-top: 10px;">这款游戏结合了虚拟与现实互动，孩子需要使用红、黄、蓝三种颜色的小积木，在 T 字形网格中完成逻辑推理。</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">游戏规则</h2>
+            <ul class="rules-list">
+                <li>自备大小合适的红、黄、蓝色小积木各 2 个</li>
+                <li>5 个格子组成 T 字形（横 3 格，竖 3 格）</li>
+                <li>题目会给出 2 个已知格子的颜色</li>
+                <li>参与者需要将空着的格子放上对应颜色的积木</li>
+                <li>点击「下一个题目」换题，点击「显示答案」确认是否正确</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">游戏特点</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <div class="feature-icon">🧠</div>
+                    <div class="feature-text">逻辑推理训练</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-text">颜色认知学习</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-text">平板手机兼容</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-text">唯一解题目设计</div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="https://cube5.vercel.app" class="cta-button">开始游戏</a>
+        
+        <div class="tips">
+            <div class="tips-title">💡 游戏小贴士</div>
+            <div class="tips-content">
+                <p>1. 游戏支持全屏模式，点击「全屏显示」按钮可避免误触退出</p>
+                <p>2. 每道题目都有唯一解，锻炼孩子的逻辑思维能力</p>
+                <p>3. 适合 5-12 岁儿童，可家长陪同游玩</p>
+            </div>
+        </div>
+        
+        <div class="qr-code">
+            <p style="margin-bottom: 10px; color: #666; font-size: 14px;">扫描二维码直接游玩</p>
+            <div class="qr-placeholder">
+                二维码占位<br>可替换为实际二维码
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 五宫格 T 字谜题 | 儿童趣味数学游戏</p>
+            <p style="margin-top: 5px;">让学习变得有趣，让逻辑训练不再枯燥</p>
+        </div>
+    </div>
+</body>
+</html>
